@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "AdminOrderView";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+    
+
+<h2>AdminOrderView</h2>
+@{
+
+    Class1 c = new Class1();
+    System.Data.DataSet d = new System.Data.DataSet();
+   
+    d = c.selectDATA(@"use AchaksyuatDatabase
+                        select * from OrderMaster where Order_Status='Order Placed'");
+    <h3 style="color:coral">Order Details to be Confirmed.</h3>
+    <table class="table" width="85">
+        <thead class="thead-dark">
+            <tr>
+                <th width="20px">OrderId</th>
+                <th width="20px">Customer Name</th>
+                <th width="20px">Delivery Address</th>
+                <th width="20px">City</th>
+                <th width="20px">State</th>
+                <th width="20px">Pincode</th>
+                <th width="20px">Contact</th>
+                <th width="20px">Email</th>
+                <th width="20px">User Email</th>
+                <th width="20px">Date Of Order</th>
+                <th width="20px">Pay Method</th>
+                <th width="20px">Order Status</th>
+                <th width="20px">Action</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (d.Tables[0].Rows.Count.Equals(null))
+            {
+                <tr>
+                    <td colspan=@d.Tables[0].Rows.Count>No Orders Placed/Left to Confirm</td>
+                    </tr>
+            }
+
+           
+            @for (int i = 0; i < d.Tables[0].Rows.Count; i++)
+            {
+                <tr>
+                    @*<td>
+                        <img src="data:image/png;base64,@Convert.ToBase64String((byte[])d.Tables[0].Rows[i]["ProdImage"])" width="85" height="80" />
+                    </td>*@
+                    <td>@d.Tables[0].Rows[i]["OrderId"]</td>
+                    <td>@d.Tables[0].Rows[i]["Customer_Name"]</td>
+                    <td>@d.Tables[0].Rows[i]["Delivery_Address"]</td>
+                    <td>@d.Tables[0].Rows[i]["City"]</td>
+                    <td>@d.Tables[0].Rows[i]["State"]</td>
+                    <td>@d.Tables[0].Rows[i]["Pincode"]</td>
+                    <td>@d.Tables[0].Rows[i]["Contact_No"]</td>
+                    <td>@d.Tables[0].Rows[i]["Customer_Email"]</td>
+                    <td>@d.Tables[0].Rows[i]["User_Email"]</td>
+                    <td>@d.Tables[0].Rows[i]["Order_Date"]</td>
+                    <td>@d.Tables[0].Rows[i]["Pay_Method"]</td>
+                    <td>@d.Tables[0].Rows[i]["Order_Status"]</td>
+                   @* <td>@Html.ActionLink("OrderConfirm", "OrderConfirm", new { k = @d.Tables[0].Rows[i]["OrderId"] })</td>*@
+                    <td>@Html.ActionLink("Package Details", "AdminPackageDetails", new { k = @d.Tables[0].Rows[i]["OrderId"] })</td>
+                </tr>
+            }
+
+            
+
+        </tbody>
+    </table>
+
+}
+
+

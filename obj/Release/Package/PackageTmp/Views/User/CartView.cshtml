@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "CartView";
+    Layout = "~/Views/Shared/User_LayoutPage.cshtml";
+}
+
+@{
+
+    Class1 c = new Class1();
+    System.Data.DataSet d = new System.Data.DataSet();
+    d = c.selectDATA(@"use AchaksyuatDatabase
+                         SELECT         CartMaster.ProdNo, ProductMaster.ProdName, ProductMaster.ProdImage, CartMaster.Price as Price, sum(CartMaster.Quantitty) as Quantity, sum(CartMaster.total) as Total , CartMaster.UserEmail, ProductMaster.ProdImage
+                         FROM            CartMaster INNER JOIN
+                         ProductMaster ON CartMaster.ProdNo = ProductMaster.ProdNo"
+                        + " where UserEmail = '" + Convert.ToString(Session["Email"]) + "'"
+                       + " group by   CartMaster.ProdNo, ProductMaster.ProdName,ProductMaster.ProdImage,CartMaster.Price, CartMaster.UserEmail, ProductMaster.ProdImage");
+    <h3 style="color:coral">Your Cart</h3>
+    <table class="table" width="85" >
+        <thead class="thead-dark">
+            <tr>
+                <th width="50px">Image</th>
+                <th width="50px">Product No.</th>
+                <th width="50px">Product Name</th>
+                <th width="50px">Price</th>
+                <th width="50px">Quantity</th>
+                <th width="50px">Total</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        
+            @for (int i = 0; i < d.Tables[0].Rows.Count; i++)
+            {    
+                <tr>
+                    <td> 
+                        <img src="data:image/png;base64,@Convert.ToBase64String((byte[])d.Tables[0].Rows[i]["ProdImage"])" width="85" height="80" /> 
+                    </td>
+                    <td>@d.Tables[0].Rows[i]["ProdNo"]</td>
+                    <td>@d.Tables[0].Rows[i]["ProdName"]</td>
+                    <td>@d.Tables[0].Rows[i]["Price"]</td>
+                    <td>@d.Tables[0].Rows[i]["Quantity"]</td>
+                    <td>@d.Tables[0].Rows[i]["Total"]</td>
+                   
+                </tr>
+            }
+            
+            <tr></tr>
+            <tr>
+                <td colspan="6">
+                    <a href="UserDelivery" accesskey="c">Checkout</a>
+                    </td>
+                </tr>
+               
+        </tbody>
+    </table>
+
+}

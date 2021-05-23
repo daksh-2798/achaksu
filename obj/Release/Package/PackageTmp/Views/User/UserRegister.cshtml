@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "UserRegister";
+    Layout = "~/Views/Shared/_UserLayoutPage1.cshtml";
+}
+<script src="~/js/responsivevoice.js"></script>
+
+
+<script type="text/javascript">
+
+    responsiveVoice.speak("Welcome to achaksyuat  Register yourself ");
+
+</script>
+
+<script type="text/javascript">
+    function speak(a)
+        {
+    responsiveVoice.speak(a);
+    }
+
+
+    function speakWord(e)
+    {
+        responsiveVoice.speak(e.key);
+    }
+</script>
+
+
+
+@using (Html.BeginForm("UserRegisterPost", "User", FormMethod.Post))
+{
+    <div class="container" style="margin-top:30px">
+        <div class="col-md-10">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3 class="panel-title"><strong>REGISTERATION FORM </strong></h3></div>
+                <div class="panel-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="exampleInputFN">First Name</label>
+                            <input type="text" class="form-control" id="fname" name="fname" onkeypress="speakWord(event);" onfocus="speak('Enter your name');" autofocus placeholder="Enter First Name">
+                        </div>
+                        <div class="form-group">
+                          <label>Last Name</label>
+                           <input type="text" class="form-control" name="lname" id="lname" placeholder="Enter Last Name">
+    
+                         </div>
+                        <div class="form-group">
+                            <label for="exampleInputGender">Gender</label>
+                            <input type="radio" id="gender" name="gender" value="male" checked> Male &nbsp;
+                            <input type="radio" id="gender" name="gender" value="female"> Female &nbsp;
+                            <input type="radio" id="gender" name="gender" value="other"> Other &nbsp;
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputDob">Date Of Birth</label> <br/>
+                            <label for="exampleInputDate">Date</label>
+                            <input type="text" class="form-control" id="date" name="date" placeholder="Enter Date">
+                            <label for="exampleInputMonth">Month</label>
+                            <input type="text" class="form-control" id="month" name="month" placeholder="Enter Month">
+                            <label for="exampleInputMonth">Year</label>
+                            <input type="text" class="form-control" id="year" name="year" placeholder="Enter Year">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputBlindper">Blindness Percentage</label>
+                            <input type="text" class="form-control" id="bp" name="bp" placeholder="Enter Blind Percentage">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputUDID">UDID Number</label>
+                            <input type="text" class="form-control" id="UDID" name="udid" placeholder="Enter UDID Numner">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputCertficate">Certificate Number</label>
+                            <input type="text" class="form-control" id="certificate" name="certificate" placeholder="Enter Certificate Number">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputAdress">Address</label>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputCity">City</label>
+                            <input type="text" class="form-control" id="city" name="city" placeholder="Enter City">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputState">State</label>
+                            <input type="text" class="form-control" id="state" name="state" placeholder="Enter State">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputCountry">Country</label>
+                            <input type="text" class="form-control" id="country" name="country" placeholder="Enter Country" value="India">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputMob">Mobile Number</label>
+                            <input type="text" class="form-control" id="mob" name="mob" placeholder="Mobile Number">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail">Email id</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email ID">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="password1" name="password" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Confirm Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+                        </div>
+                        <button type="submit" class="btn btn-sm btn-default">Sign in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}

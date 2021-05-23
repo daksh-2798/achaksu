@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "AdminHome";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+@if (ViewData["Name"] != null)
+{
+    <label style="color:blue">
+        "Hello," @ViewData["Name"]
+    </label>
+}
+
+
+
+@{ 
+
+    @*Class1 c = new Class1();
+    System.Data.DataSet ds = new System.Data.DataSet();
+    ds = c.selectDATA("select * from ProductMaster");
+
+
+    string imageUrl = "data:image/jpg;base64," + Convert.ToBase64String((byte[])ds.Tables[0].Rows[0]["ProdImage"]);
+
+<img src="@imageUrl" width="200" height="200" />*@
+    <a href="AdminOrderView">View Orders</a><br/>
+    <a href="PackagerRegister">Register Packager</a>
+
+}

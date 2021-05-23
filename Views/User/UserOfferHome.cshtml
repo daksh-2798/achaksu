@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "UserOfferHome";
+    Layout = "~/Views/Shared/User_LayoutPage.cshtml";
+}
+
+<script src="~/js/responsivevoice.js"></script>
+
+
+<script type="text/javascript">
+
+    responsiveVoice.speak("Welcome to the offers page.Press alter key plus. 1 for Fruits. 2 for vegetables. 3 for foodgrains-oils-and-masala. 4 for beverages. 5 for snacks. S. for other navigating keys.");
+
+</script>
+
+<script type="text/javascript">
+    function speak(a)
+        {
+    responsiveVoice.speak(a);
+    }
+
+    function speakd()
+    {
+        responsiveVoice.speak('Press alter key plus. h. for home page. j. for your orders page. k. for your cart.');
+    }
+
+    function speakWord(e)
+    {
+        responsiveVoice.speak(e.key);
+    }
+</script>
+
+@*@if (ViewData["Email"] != null)
+{
+    <label style="color:blue">
+        "Hello," @ViewData["Email"]
+    </label>
+}*@
+
+<a href="javascript:speakd()" accesskey="s" hidden="hidden">Speak</a>
+<a href="UserHome" accesskey="h" hidden="hidden">H</a>
+<a href="YourOrderView" accesskey="j" hidden="hidden">O</a>
+<a href="CartView" accesskey="k" hidden="hidden">k</a>
+
+<html>
+<body>
+   
+
+    <div class="container" style="margin-top:30px">
+        <h3 style="color:black">Offers..:)</h3>
+        <h3 style="color:red">Categories</h3>
+        <div class="panel-body">
+            <div class="col-md-3">
+
+                <img src=" ~/images/fruitss.png" width="165" height="160" /><br />
+
+                <a href="UserOfferCat?cat=1" accesskey="1" value="Fruits" class="btn btn-sm btn-primary" style=" background-color:paleturquoise; color:black; font:bold;">Fruits</a>
+
+            </div>
+            <div class="col-md-3">
+
+                <img src=" ~/images/v.png" width="165" height="160" /><br />
+                <a href="UserOfferCat?cat=2" accesskey="2" value="Vegetables" class="btn btn-sm btn-primary" style=" background-color:paleturquoise; color:black; font:bold;">Vegetables</a>
+            </div>
+
+            <div class="col-md-3">
+                <img src=" ~/images/fom.png" width="165" height="160" /><br />
+                <a href="UserOfferCat?cat=3" accesskey="3" value="GrainsOilsMasala" class="btn btn-sm btn-primary" style="background-color:paleturquoise; color:black; font:bold;">Foodgrains,Oil&Masala</a>
+            </div>
+            <div class="col-md-3">
+                <img src=" ~/images/b.png" width="165" height="160" /><br />
+                <a href="UserOfferCat?cat=4" accesskey="4" value="Beverages" class="btn btn-sm btn-primary" style="background-color:paleturquoise; color:black; font:bold;">Beverages</a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-3">
+                <img src=" ~/images/ss.png" width="165" height="160" /><br />
+                <a href="UserOfferCat?cat=5" accesskey="5" value="Snacks" class="btn btn-sm btn-primary" style="background-color:paleturquoise; color:black; font:bold;">Snacks</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

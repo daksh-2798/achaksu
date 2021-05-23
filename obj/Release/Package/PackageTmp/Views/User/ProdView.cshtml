@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "ProdView";
+    Layout = "~/Views/Shared/_UserLayoutPage1.cshtml";
+}
+
+@using (Html.BeginForm("ProdView", "User", FormMethod.Post))
+{
+
+<h3 style="color:blue">Products in your Selectd Categories</h3>
+<br/>
+    Class1 c = new Class1();
+    System.Data.DataSet ds = new System.Data.DataSet();
+    System.Data.DataSet ds1 = new System.Data.DataSet();
+   
+
+    //string a= Request.QueryString["cat"];
+
+    if (Request.QueryString["cat"] == null)
+    {
+        ds = c.selectDATA("select * from ProductMaster where CategoryId=" + Convert.ToInt32(Session["cat"]) + " ");
+        //ds1 = c.selectDATA("select * from CategoryMaster where CategoryId=" + Convert.ToInt32(Session["cat"]) + " ");
+
+    }
+    else
+    {
+        ds = c.selectDATA("select * from ProductMaster where CategoryId=" + Convert.ToInt32(Request.QueryString["cat"]) + " ");
+        // ds1 = c.selectDATA("select * from CategoryMaster where CategoryId=" + Convert.ToInt32(Request.QueryString["cat"]) + " ");
+        Session["cat"] = Request.QueryString["cat"];
+    }
+
+
+
+
+    int i = Convert.ToInt32(Session["val"]);
+
+
+    string imageUrl = "data:image/png;base64," + Convert.ToBase64String((byte[])ds.Tables[0].Rows[i]["ProdImage"]);
+    string prodno = "Product Number:" + ds.Tables[0].Rows[i]["ProdNo"];
+     string  prodnm = "Name:" + ds.Tables[0].Rows[i]["ProdName"];
+    string prodbrand = "Brand:" + ds.Tables[0].Rows[i]["Brand"];
+    string proddes = "Description:" + ds.Tables[0].Rows[i]["Description"];
+    string prodprice = "Price:" + ds.Tables[0].Rows[i]["Price"] + "/-";
+    string prodavail = "Available:" + ds.Tables[0].Rows[i]["IsActive"];
+    // string cattype = "Product From Category:" + ds1.Tables[0].Rows[i]["Cat_Type"];
+    //<div class="col-md-3">
+    //  <p style="color:blue">@cattype</p>
+    //</div>
+            <div class="col-md-3">
+                <img src="@imageUrl" width="165" height="160" />
+            </div>
+            <div class="col-md-3">
+                <p style="color:black">@prodno</p>
+                <p style="color:black">@prodnm</p>
+                <p style="color:black">@prodbrand</p>
+                <p style="color:black">@proddes</p>
+                <p style="color:black">@prodprice</p>
+                <p style="color:black">@prodavail</p>
+               
+            </div>
+            <div class="row-md-3">
+                    <br />
+                    <input type="submit" value="Next" name="Next" accesskey="n" class=" btn btn-sm btn-primary">
+             </div>
+             <div class="row-md-3">
+                 <br/>
+                
+                 @* <a href="@Url.Action("AddtoCart", "Cart", new { id = @prodno})">Add to Cart</a>*@   
+                 </div>
+              
+
+}
+<br/>
+<br/>
+<form action="ProdViewBack" method="post">
+    <input type="submit" value="Back" name="Back" accesskey="b" class=" btn btn-sm btn-primary">
+
+</form>
+
+<form action="AddtoCart" method="post">
+    @{
+        Class1 c1 = new Class1();
+        System.Data.DataSet dss = new System.Data.DataSet();
+
+
+        //string a= Request.QueryString["cat"];
+
+        if (Request.QueryString["cat"] == null)
+        {
+            dss = c1.selectDATA("select * from ProductMaster where CategoryId=" + Convert.ToInt32(Session["cat"]) + " ");
+            //ds1 = c.selectDATA("select * from CategoryMaster where CategoryId=" + Convert.ToInt32(Session["cat"]) + " ");
+
+        }
+        else
+        {
+            dss = c1.selectDATA("select * from ProductMaster where CategoryId=" + Convert.ToInt32(Request.QueryString["cat"]) + " ");
+            // ds1 = c.selectDATA("select * from CategoryMaster where CategoryId=" + Convert.ToInt32(Request.QueryString["cat"]) + " ");
+            Session["cat"] = Request.QueryString["cat"];
+        }
+
+
+
+
+        int ii = Convert.ToInt32(Session["val"]);
+       
+
+        <input type="text" hidden="hidden" value=@dss.Tables[0].Rows[ii]["ProdNo"] name="pnp" id="pnp">
+        <input type="text"  hidden="hidden"  value=@dss.Tables[0].Rows[ii]["Price"] name="ppri" id="ppri">
+        <label for="quantity">Quantity</label>
+        <input type="text" value="1" name="quantity">
+        <input type="submit" value="AddToCart" name="AddtoCart" accesskey="a" class=" btn btn-sm btn-primary">
+
+//<a href = "~/Views/CartView.cshtml" > Cart </a >
+<a href = "CartView" >Cart</a >
+    }
+  
+</form>

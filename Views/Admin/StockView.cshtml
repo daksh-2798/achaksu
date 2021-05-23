@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "StockView";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2 style="color:coral">Present Stock</h2>
+@{
+
+    Class1 c = new Class1();
+    System.Data.DataSet d = new System.Data.DataSet();
+
+    d = c.selectDATA(@"use AchaksyuatDatabase
+SELECT       StockMaster.Prod_Id as PN, ProductMaster.ProdName,ProductMaster.ProdImage, SUM(StockMaster.Quantity) AS InwardQuantity, ISNULL(SUM(OrderDetails.Quantity), 0) AS Outward, SUM(StockMaster.Quantity) - ISNULL(SUM(OrderDetails.Quantity), 0) AS Stock
+FROM            StockMaster INNER JOIN
+                         ProductMaster ON StockMaster.Prod_Id = ProductMaster.ProdNo LEFT OUTER JOIN
+                         OrderDetails ON StockMaster.Prod_Id = OrderDetails.Prod_No
+GROUP BY ProductMaster.ProdNo,OrderDetails.Quantity, StockMaster.Prod_Id, ProductMaster.ProdName,ProductMaster.ProdImage");
+
+    <table class="table" width="85">
+        <thead class="thead-dark">
+            <tr>
+                <th width="20px">Product Id</th>
+                <th width="20px">Product Image</th>
+                <th width="20px">Product Name</th>
+                <th width="20px">Quantity in Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < d.Tables[0].Rows.Count; i++)
+            {
+                <tr>
+                    
+                    <td>@d.Tables[0].Rows[i]["PN"]</td>
+                    <td>
+                        <img src="data:image/png;base64,@Convert.ToBase64String((byte[])d.Tables[0].Rows[i]["ProdImage"])" width="85" height="80" />
+                    </td>
+                    
+                    <td>@d.Tables[0].Rows[i]["ProdName"]</td>
+                    <td>@d.Tables[0].Rows[i]["Stock"]</td>
+                    </tr>
+            }
+
+
+
+        </tbody>
+    </table>
+
+}
+
+

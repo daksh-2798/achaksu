@@ -1,0 +1,47 @@
+﻿@model List<Projectnet.Models.ProductMaster>
+@{
+    ViewBag.Title = "AddDiscountProdView";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+@using (Html.BeginForm("AddDiscountProdDisView", "Admin", FormMethod.Post))
+    <form>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th width="20px">Image</th>
+                    <th width="20px">Product Number</th>
+                    <th width="20px">Product Name</th>
+                    <th width="20px">Brand</th>
+                    <th width="20px">Price</th>
+                    <th width="20px">Discount</th>
+                    <th width="20px">Active</th>
+                    <th width="20px">Update</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var s in Model)
+                {
+
+                    <tr>
+                        <td>
+                            <img src="data:image/png;base64,@Convert.ToBase64String((byte[])s.ProdImage)" width="85" height="80" />
+                        </td>
+                        <td>@s.ProdNo</td>
+                        <td>@s.ProdName</td>
+                        <td>@s.Brand</td>
+                        <td>@s.Price</td>
+                        <td><input type="text" name="d" id="d" class="form-control" size="2" maxlength="2"></td>
+                        <td>@s.IsActive</td>
+                        <input type="hidden"  value="@s.ProdNo" name="id" id="id" >
+                        <td><input type="submit" value="Update" name="btn" id="btn" class="btn btn-danger"></td>
+                        @*<td>@Html.ActionLink("Update", "UpdateDiscount", new { id = @s.ProdNo })</td>*@
+                    </tr>
+                        
+                }
+
+            </tbody>
+
+        </table>
+    </form>

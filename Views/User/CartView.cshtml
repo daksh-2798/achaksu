@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "CartView";
+    Layout = "~/Views/Shared/User_LayoutPage.cshtml";
+}
+
+<script src="~/js/responsivevoice.js"></script>
+<script type="text/javascript">
+    responsiveVoice.speak("Welcome tou your cart and press alter key plus. S for details on page. ");
+    </script>
+
+<script type="text/javascript">
+    function speak(a)
+    {
+    responsiveVoice.speak(a);
+    }
+    function speak(pno,pna,pri,q,t) {
+        responsiveVoice.speak('Product Number is ' + pno);
+        responsiveVoice.speak('Product Name is ' + pna);
+        responsiveVoice.speak('Price is ' + pri);
+        responsiveVoice.speak('Quantity of the product is ' + q);
+        responsiveVoice.speak('Toatl amount for the quantity is ' + t);
+    }
+
+    function speakWord(e)
+    {
+        responsiveVoice.speak(e.key);
+    }
+    function speakqtc(x,y)
+    {
+        responsiveVoice.speak('Number of i-tems in your. cart are' + x);
+        responsiveVoice.speak('Press alter key plus. 0 for first item , 1 for second item and continue till. ' + y);
+        responsiveVoice.speak('Press alter key plus. C to clear your cart. and X for checkout.');
+        responsiveVoice.speak('Press alter key plus. h. for home page. j. for your orders page.');
+    }
+    
+</script>
+
+
+@{
+
+    Class1 c = new Class1();
+    System.Data.DataSet d = new System.Data.DataSet();
+    d = c.selectDATA(@"use AchaksyuatDatabase
+                         SELECT         CartMaster.ProdNo, ProductMaster.ProdName, ProductMaster.ProdImage, CartMaster.Price as Price, sum(CartMaster.Quantitty) as Quantity, sum(CartMaster.total) as Total , CartMaster.UserEmail, ProductMaster.ProdImage
+                         FROM            CartMaster INNER JOIN
+                         ProductMaster ON CartMaster.ProdNo = ProductMaster.ProdNo"
+                        + " where UserEmail = '" + Convert.ToString(Session["Email"]) + "'"
+                       + " group by   CartMaster.ProdNo, ProductMaster.ProdName,ProductMaster.ProdImage,CartMaster.Price, CartMaster.UserEmail, ProductMaster.ProdImage");
+    int ctotal = 0;
+    int qtc = d.Tables[0].Rows.Count;
+    int f = qtc - 1;
+    <a href="javascript:speakqtc('@qtc','@f')" accesskey="s" hidden="hidden">Speak</a>
+    <a href="UserHome" accesskey="h" hidden="hidden">H</a>
+    <a href="YourOrderView" accesskey="j" hidden="hidden">O</a>
+    <a href="CartView" accesskey="k" hidden="hidden">k</a>
+    <h3 style=" color:coral">
+        Your Cart</h3>
+        <form action="ClearCart" method="get">
+            <table class="table table-striped" width="85">
+                <thead class="thead-dark">
+                    <tr>
+                        <th width="50px">Image</th>
+                        <th width="50px">Product No.</th>
+                        <th width="50px">Product Name</th>
+                        <th width="50px">Price</th>
+                        <th width="50px">Quantity</th>
+                        <th width="50px">Total</th>
+                        @*<th width="50px">Speak</th>*@
+                        <th width="50px">Remove</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @for (int i = 0; i < d.Tables[0].Rows.Count; i++)
+                    {
+                        ctotal = Convert.ToInt32(d.Tables[0].Rows[i]["Total"]) + ctotal;
+                        <tr>
+                            <td>
+                                <img src="data:image/png;base64,@Convert.ToBase64String((byte[])d.Tables[0].Rows[i]["ProdImage"])" width="85" height="80" />
+                            </td>
+                            <td>@d.Tables[0].Rows[i]["ProdNo"]</td>
+                            <td>@d.Tables[0].Rows[i]["ProdName"]</td>
+                            <td>@d.Tables[0].Rows[i]["Price"]</td>
+                            <td>@d.Tables[0].Rows[i]["Quantity"]</td>
+                            <td>@d.Tables[0].Rows[i]["Total"]
+                            @*<td><input type="button" acceskey="@i" class="form-control"  onclick="speak('Product number'+ @d.Tables[0].Rows[i]["ProdNo"]+'Product name'+@d.Tables[0].Rows[i]["ProdName"]+'Price:'+@d.Tables[0].Rows[i]["Price"]+'Quantity:'+@d.Tables[0].Rows[i]["Quantity"]+'Total:'+@d.Tables[0].Rows[i]["Total"]+'Press n for next product.Press b for previous product.')" />
+                            @*<td>*@
+                            <a href="javascript:speak('@d.Tables[0].Rows[i]["ProdNo"]','@d.Tables[0].Rows[i]["ProdName"]','@d.Tables[0].Rows[i]["Price"]','@d.Tables[0].Rows[i]["Quantity"]','@d.Tables[0].Rows[i]["Total"]')" accesskey="@i" value="Speak" hidden class="btn btn-dark" style="  color:white; font:bold;">Speak</a> </td>
+                            <td>@Html.ActionLink("Remove", "Remove", new { k = @d.Tables[0].Rows[i]["ProdNo"] }, new { @class = "btn btn-danger" })</td>
+                        </tr>
+                    }
+
+
+
+                </tbody>
+            </table>
+
+            <div class="panel-footer">
+                <div class="row text-right">
+                    <div class="col-xs-12">
+                        <h4 class="text-right">Total <strong>@ctotal</strong></h4>
+                    </div>
+                    <div class="col-xs-1">
+                        <input type="submit" accesskey="c" name="Clear Cart" value="Clear Cart" class="btn btn-dark">
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="text" hidden="hidden">
+                    </div>
+
+                    <div class="col-xs-5">
+                        <a href="UserDelivery" accesskey="c">
+                            <input type="button" name="Checkout" value="Checkout" class="btn btn-danger" accesskey="x">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+
+}

@@ -1,0 +1,91 @@
+﻿@model Projectnet.Models.UserMaster
+
+@{
+    ViewBag.Title = "UserHome";
+    Layout = "~/Views/Shared/User_LayoutPage.cshtml";
+}
+<script src="~/js/responsivevoice.js"></script>
+
+
+<script type="text/javascript">
+
+    responsiveVoice.speak("Welcome to the home page. ");
+
+</script>
+
+<script type="text/javascript">
+    function speak(a)
+        {
+    responsiveVoice.speak(a);
+    }
+
+
+    function speakWord(e)
+    {
+        responsiveVoice.speak(e.key);
+    }
+</script>
+
+@if (ViewData["Email"] != null)
+{
+    <label style="color:blue">
+        "Hello," @ViewData["Email"]
+    </label>
+}
+
+
+<html>
+<body>
+    <div class="container" style="margin-top:30px">
+        @*<h3 style="color:blue">Categories</h3>*@
+        <div class="panel-body">
+            <div class="col-md-10">
+                @if (Session["Email"] != null)
+                {
+                    <label style="color:blue">
+                        "Hello," @Session["Email"]
+                    </label>
+                }
+            </div>
+            <div class="col-md-2">
+
+                <a href="CartView">Cart</a>
+            </div>
+            </div>
+    </div>
+                <div class="container" style="margin-top:30px">
+                    <h3 style="color:blue">Categories</h3>
+                    <div class="panel-body">
+                        <div class="col-md-3">
+
+                            <img src=" ~/images/fruitss.png" width="165" height="160" /><br />
+
+                            <a href="ProdView?cat=1" accesskey="1" value="Fruits" class="btn btn-sm btn-primary" style=" background-color:paleturquoise; color:black; font:bold;">Fruits</a>
+
+                        </div>
+                        <div class="col-md-3">
+
+                            <img src=" ~/images/v.png" width="165" height="160" /><br />
+                            <a href="ProdView?cat=2" accesskey="2" value="Vegetables" class="btn btn-sm btn-primary" style=" background-color:paleturquoise; color:black; font:bold;">Vegetables</a>
+                        </div>
+
+                        <div class="col-md-3">
+                            <img src=" ~/images/fom.png" width="165" height="160" /><br />
+                            <a href="ProdView?cat=3" accesskey="3" value="GrainsOilsMasala" class="btn btn-sm btn-primary" style="background-color:paleturquoise; color:black; font:bold;">Foodgrains,Oil&Masala</a>
+                        </div>
+                        <div class="col-md-3">
+                            <img src=" ~/images/b.png" width="165" height="160" /><br />
+                            <a href="ProdView?cat=4" accesskey="4" value="Beverages" class="btn btn-sm btn-primary" style="background-color:paleturquoise; color:black; font:bold;">Beverages</a>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-3">
+                            <img src=" ~/images/ss.png" width="165" height="160" /><br />
+                            <a href="ProdView?cat=5" accesskey="5" value="Snacks" class="btn btn-sm btn-primary" style="background-color:paleturquoise; color:black; font:bold;">Snacks</a>
+                        </div>
+                    </div>
+                </div>
+</body>
+    </html>
+
+

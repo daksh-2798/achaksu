@@ -1,0 +1,108 @@
+﻿@model Projectnet.Models.UserMaster
+@{
+    ViewBag.Title = "UserDelivery";
+    Layout = "~/Views/Shared/User_LayoutPage.cshtml";
+}
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/responsivevoice.js"></script>
+<script>
+$(document).ready(function(){
+    $("#paddr").copyvalue(function(){
+        var a = $("#paddr").val();
+        $("#daddr").val(a);
+    });
+});
+</script>
+<script type="text/javascript">
+    responsiveVoice.speak("Welcome to the Delivery Information page.");
+</script>
+<script type="text/javascript">
+    function speak(a)
+    {
+    responsiveVoice.speak(a);
+    }
+
+
+    function speakWord(e)
+    {
+        responsiveVoice.speak(e.key);
+    }
+</script>
+
+
+@{ 
+    Class1 c = new Class1();
+    System.Data.DataSet ds = new System.Data.DataSet();
+    ds = c.selectDATA("select * from UserMaster");
+    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+    {
+        if (Convert.ToString(Session["Email"]).Equals(ds.Tables[0].Rows[i]["Email"]))
+        {
+using (Html.BeginForm("UserOrder", "User", FormMethod.Post))
+{
+<link href="~/bossCss/bootstrap.min.css" rel="stylesheet" />
+<div class="container" style="margin-top:30px">
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title"><strong>Delivery Information</strong></h3></div>
+            <div class="panel-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="exampleInputName">Name</label>
+                        <input type="text" class="form-control" id="n" name="n" placeholder="Name" readonly value=@ds.Tables[0].Rows[i]["FName"]>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail">Permanent Address</label>
+                        <input type="text" class="form-control" id="paddr" name="paddr" readonly value=@ds.Tables[0].Rows[i]["Address"] >
+                    </div>
+                    @*<a href="javascript:copyvalue()" accesskey="a">Click Here</a>*@
+                    <div class="form-group">
+                        <label for="exampleInputEmail">Delivery Address</label>
+                        <input type="text" class="form-control" id="daddr" name="daddr" autofocus placeholder="Enter Delivery Address" onkeypress="speakWord(event);" onfocus="speak('Enter Delivery Address.Press tab after finished.');">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputCity">City</label>
+                        <input type="text" class="form-control" id="c" name="c" placeholder="Enter City" onkeypress="speakWord(event);" onfocus="speak('Enter City.Press tab after finished.');">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputState">State</label>
+                        <input type="text" class="form-control" id="s" name="s" placeholder="Enter State" onkeypress="speakWord(event);" onfocus="speak('Enter State.Press tab after finished.');">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPC">PinCode</label>
+                        <input type="text" class="form-control" id="pc" name="pc" placeholder="Enter PinCode" onkeypress="speakWord(event);" onfocus="speak('Enter Pincode.Press tab after finished.');">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="exampleInputContact">Contact Number</label>
+                        <input type="text" class="form-control" id="ct" name="ct" placeholder="Enter Contact Number" onkeypress="speakWord(event);" onfocus="speak('Enter Contact number.Press tab after finished.');">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail">Email id</label>
+                        <input type="text" class="form-control" id="cemail" name="cemail" placeholder="Email id" onkeypress="speakWord(event);" onfocus="speak('Enter Email Address.And Press enter to place your order. .');">
+                    </div>
+                    <div class="form-group">
+                        <label for="examplePay">Payment Method</label>:<label for="examplePay">Cash On Delivery</label>
+                        <input type="text" hidden="hidden" id="paymethod" name="paymethod" value="cod">
+                    </div>
+                    <div class="form-group">
+                        
+                        <input type="text" hidden="hidden" id="o_status" name="o_status" value="Order Placed">
+                    </div>
+
+
+
+
+                    <button type="submit" class="btn btn-dark">Place Order</button>
+    
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+        }
+
+    }
+}
+}

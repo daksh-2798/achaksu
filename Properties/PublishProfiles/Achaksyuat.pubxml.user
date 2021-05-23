@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>G:\ProjectPublish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>09/24/2018 14:42:33</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>09/24/2018 14:42:33</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>08/15/2017 13:12:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>01/05/2012 11:08:46</publishTime>
+    </File>
+    <File Include="bin/Projectnet.dll">
+      <publishTime>01/11/2019 19:11:36</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>04/13/2017 15:47:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>04/13/2017 15:47:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>04/13/2017 15:47:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>04/13/2017 15:47:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>04/13/2017 15:47:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>04/13/2017 15:47:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>04/13/2017 15:47:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Win32.Primitives.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Console.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.FileVersionInfo.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.Process.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.DriveInfo.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Pipes.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.AccessControl.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Claims.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Algorithms.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Encoding.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Primitives.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.X509Certificates.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Principal.Windows.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Threading.Thread.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.ValueTuple.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.ReaderWriter.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XmlDocument.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.XDocument.dll">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>04/13/2017 15:47:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 04:02:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/28/2015 04:02:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bossCss/bootstrap.min.css">
+      <publishTime>09/02/2018 17:02:02</publishTime>
+    </File>
+    <File Include="bossCss/bootstrap.min.js">
+      <publishTime>09/02/2018 17:02:02</publishTime>
+    </File>
+    <File Include="bossCss/jquery-1.11.1.min.js">
+      <publishTime>09/02/2018 17:02:02</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>09/02/2018 16:29:20</publishTime>
+    </File>
+    <File Include="images/banner_1.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/banner_2.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/banner_3.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/blog_1.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/blog_2.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/blog_3.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/deal_ofthe_week.png">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/desc_1.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/desc_2.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/desc_3.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/map_marker.png">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/product_1.png">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/product_10.png">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/product_2.png">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/product_3.png">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/product_4.png">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/product_5.png">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/product_6.png">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/product_7.png">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/product_8.png">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/product_9.png">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/single_1.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/single_1_thumb.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/single_2.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/single_2_thumb.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/single_3.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/single_3_thumb.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/slider_1.jpg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="images/veg1.jpg">
+      <publishTime>12/18/2018 22:38:35</publishTime>
+    </File>
+    <File Include="images/veg2.jpg">
+      <publishTime>12/18/2018 22:43:13</publishTime>
+    </File>
+    <File Include="js/categories_custom.js">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="js/contact_custom.js">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="js/custom.js">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="js/jquery-3.2.1.min.js">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="js/responsivevoice.js">
+      <publishTime>10/21/2018 16:20:58</publishTime>
+    </File>
+    <File Include="js/single_custom.js">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="Models/WebModel.edmx.diagram">
+      <publishTime>01/08/2019 20:15:25</publishTime>
+    </File>
+    <File Include="plugins/easing/easing.js">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/css/font-awesome.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/css/font-awesome.min.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.eot">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.svg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.woff">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/fonts/FontAwesome.otf">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/HELP-US-OUT.txt">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/less/animated.less">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/less/bordered-pulled.less">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/less/core.less">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/less/fixed-width.less">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/less/font-awesome.less">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/less/icons.less">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/less/larger.less">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/less/list.less">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/less/mixins.less">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/less/path.less">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/less/rotated-flipped.less">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/less/screen-reader.less">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/less/stacked.less">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/less/variables.less">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/scss/font-awesome.scss">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/scss/_animated.scss">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/scss/_bordered-pulled.scss">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/scss/_core.scss">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/scss/_fixed-width.scss">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/scss/_icons.scss">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/scss/_larger.scss">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/scss/_list.scss">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/scss/_mixins.scss">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/scss/_path.scss">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/scss/_rotated-flipped.scss">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/scss/_screen-reader.scss">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/scss/_stacked.scss">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/font-awesome-4.7.0/scss/_variables.scss">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/Isotope/isotope.pkgd.min.js">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/jquery-ui-1.12.1.custom/jquery-ui.js">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/OwlCarousel2-2.2.1/ajax-loader.gif">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/OwlCarousel2-2.2.1/animate.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/OwlCarousel2-2.2.1/owl.carousel.js">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/OwlCarousel2-2.2.1/owl.video.play.png">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/themify-icons/fonts/themify.eot">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/themify-icons/fonts/themify.svg">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/themify-icons/fonts/themify.ttf">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/themify-icons/fonts/themify.woff">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="plugins/themify-icons/themify-icons.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="styles/bootstrap4/bootstrap.min.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="styles/bootstrap4/bootstrap.min.js">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="styles/bootstrap4/popper.js">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="styles/categories_responsive.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="styles/categories_styles.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="styles/contact_responsive.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="styles/contact_styles.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="styles/main_styles.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="styles/responsive.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="styles/single_responsive.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="styles/single_styles.css">
+      <publishTime>09/02/2018 16:38:36</publishTime>
+    </File>
+    <File Include="Views/Admin/AdminAddCategory.cshtml">
+      <publishTime>10/16/2018 17:56:32</publishTime>
+    </File>
+    <File Include="Views/Admin/AdminAddProduct.cshtml">
+      <publishTime>12/27/2018 08:41:48</publishTime>
+    </File>
+    <File Include="Views/Admin/AdminHome.cshtml">
+      <publishTime>01/03/2019 19:22:34</publishTime>
+    </File>
+    <File Include="Views/Admin/AdminLogin.cshtml">
+      <publishTime>01/10/2019 20:14:07</publishTime>
+    </File>
+    <File Include="Views/Admin/AdminOrderView.cshtml">
+      <publishTime>01/09/2019 20:18:12</publishTime>
+    </File>
+    <File Include="Views/Admin/AdminRegister.cshtml">
+      <publishTime>12/16/2018 11:35:15</publishTime>
+    </File>
+    <File Include="Views/Admin/PackageDetails.cshtml">
+      <publishTime>01/09/2019 19:58:58</publishTime>
+    </File>
+    <File Include="Views/Admin/PackagerLogin.cshtml">
+      <publishTime>01/07/2019 20:24:28</publishTime>
+    </File>
+    <File Include="Views/Admin/PackagerRegister.cshtml">
+      <publishTime>01/03/2019 19:26:38</publishTime>
+    </File>
+    <File Include="Views/Admin/PackagerView.cshtml">
+      <publishTime>01/10/2019 18:50:29</publishTime>
+    </File>
+    <File Include="Views/Admin/PackedOrder.cshtml">
+      <publishTime>01/10/2019 20:15:01</publishTime>
+    </File>
+    <File Include="Views/Shared/User_LayoutPage.cshtml">
+      <publishTime>12/25/2018 09:41:20</publishTime>
+    </File>
+    <File Include="Views/Shared/_AdminLayoutPage.cshtml">
+      <publishTime>10/16/2018 17:45:23</publishTime>
+    </File>
+    <File Include="Views/Shared/_AdminLayoutPage1.cshtml">
+      <publishTime>10/16/2018 17:40:05</publishTime>
+    </File>
+    <File Include="Views/Shared/_UserLayoutPage1.cshtml">
+      <publishTime>10/14/2018 16:41:32</publishTime>
+    </File>
+    <File Include="Views/User/CartView.cshtml">
+      <publishTime>12/27/2018 15:02:29</publishTime>
+    </File>
+    <File Include="Views/User/ProdView.cshtml">
+      <publishTime>01/02/2019 19:50:32</publishTime>
+    </File>
+    <File Include="Views/User/UserDelivery.cshtml">
+      <publishTime>01/08/2019 19:17:01</publishTime>
+    </File>
+    <File Include="Views/User/UserHome.cshtml">
+      <publishTime>12/25/2018 10:44:45</publishTime>
+    </File>
+    <File Include="Views/User/UserLogin.cshtml">
+      <publishTime>01/02/2019 19:10:28</publishTime>
+    </File>
+    <File Include="Views/User/UserOrder.cshtml">
+      <publishTime>12/27/2018 08:52:36</publishTime>
+    </File>
+    <File Include="Views/User/UserProfile.cshtml">
+      <publishTime>10/06/2018 16:36:34</publishTime>
+    </File>
+    <File Include="Views/User/UserRegister.cshtml">
+      <publishTime>11/04/2018 10:28:29</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>09/02/2018 16:29:20</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/11/2019 19:11:37</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

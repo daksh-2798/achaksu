@@ -1,0 +1,47 @@
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\Projectnet.dll.config
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\Projectnet.dll
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\Projectnet.pdb
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\System.Web.Helpers.dll
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\System.Web.Mvc.dll
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\System.Web.Razor.dll
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\System.Web.Webpages.Deployment.dll
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\System.Web.Webpages.dll
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\System.Web.Webpages.Razor.dll
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\System.Web.Razor.xml
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\System.Web.Webpages.xml
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\System.Web.Webpages.Deployment.xml
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\System.Web.Webpages.Razor.xml
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\System.Web.Helpers.xml
+C:\Users\admin\Documents\Projectnet\Projectnet\bin\System.Web.Mvc.xml
+C:\Users\admin\Documents\Projectnet\Projectnet\obj\Debug\Projectnet.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\Projectnet\Projectnet\obj\Debug\Projectnet.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\Projectnet\Projectnet\obj\Debug\Projectnet.dll
+C:\Users\admin\Documents\Projectnet\Projectnet\obj\Debug\Projectnet.pdb
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\Projectnet.dll.config
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\Projectnet.dll
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\Projectnet.pdb
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\EntityFramework.dll
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\EntityFramework.SqlServer.dll
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\System.Web.Helpers.dll
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\System.Web.Mvc.dll
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\System.Web.Razor.dll
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\System.Web.Webpages.Deployment.dll
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\System.Web.Webpages.dll
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\System.Web.Webpages.Razor.dll
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\EntityFramework.xml
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\EntityFramework.SqlServer.xml
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\System.Web.Razor.xml
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\System.Web.Webpages.xml
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\System.Web.Webpages.Deployment.xml
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\System.Web.Webpages.Razor.xml
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\System.Web.Helpers.xml
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\bin\System.Web.Mvc.xml
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\obj\Debug\Projectnet.dll
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\obj\Debug\Projectnet.pdb
+C:\Users\DAKSH\Documents\Visual Studio 2015\Projects\Projectnet\Projectnet\obj\Debug\Projectnet.csprojResolveAssemblyReference.cache

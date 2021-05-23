@@ -1,0 +1,162 @@
+﻿<link href="~/styles/pd.css" rel="stylesheet" />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+@{
+    ViewBag.Title = "ProdView";
+    Layout = "~/Views/Shared/User_LayoutPage.cshtml";
+}
+
+
+<script src="~/js/responsivevoice.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script type="text/javascript">
+
+    responsiveVoice.speak("Product Page. Press alter key plus. S to speak the details of the product. X for navigating guidelines.");
+
+</script>
+
+<script type="text/javascript">
+    function speak(a)
+    {
+    responsiveVoice.speak(a);
+    }
+    function speakd() {
+        responsiveVoice.speak('Press alter key plus. h. for home page. j. for your orders page. k. for your cart.');
+    }
+
+    function speakWord(e)
+    {
+        responsiveVoice.speak(e.key);
+    }
+</script>
+
+
+@using (Html.BeginForm("ProdView", "User", FormMethod.Post))
+{
+    <a href="javascript:speakd()" accesskey="x" hidden="hidden">Speak</a>
+    <a href="UserHome" accesskey="h" hidden="hidden">H</a>
+    <a href="YourOrderView" accesskey="j" hidden="hidden">O</a>
+    <a href="CartView" accesskey="k" hidden="hidden">k</a>
+
+<h3 style="color:black">Products in your Selectd Categories</h3>
+<br/>
+    Class1 c = new Class1();
+    System.Data.DataSet ds = new System.Data.DataSet();
+    System.Data.DataSet ds1 = new System.Data.DataSet();
+
+
+    //string a= Request.QueryString["cat"];
+
+    if (Request.QueryString["cat"] == null)
+    {
+        ds = c.selectDATA("select * from ProductMaster where CategoryId=" + Convert.ToInt32(Session["cat"]) + " ");
+        //ds1 = c.selectDATA("select * from CategoryMaster where CategoryId=" + Convert.ToInt32(Session["cat"]) + " ");
+
+    }
+    else
+    {
+        ds = c.selectDATA("select * from ProductMaster where CategoryId=" + Convert.ToInt32(Request.QueryString["cat"]) + " ");
+        // ds1 = c.selectDATA("select * from CategoryMaster where CategoryId=" + Convert.ToInt32(Request.QueryString["cat"]) + " ");
+        Session["cat"] = Request.QueryString["cat"];
+    }
+
+
+
+
+    int i = Convert.ToInt32(Session["val"]);
+
+
+    string imageUrl = "data:image/png;base64," + Convert.ToBase64String((byte[])ds.Tables[0].Rows[i]["ProdImage"]);
+    string prodno = "Product Number:" + ds.Tables[0].Rows[i]["ProdNo"];
+    string prodnm = "Name:" + ds.Tables[0].Rows[i]["ProdName"];
+    string prodbrand = "Brand:" + ds.Tables[0].Rows[i]["Brand"];
+    string proddes = "Description:" + ds.Tables[0].Rows[i]["Description"];
+    string prodprice = "Price:" + ds.Tables[0].Rows[i]["Price"] + "/-";
+    string prodavail = "Available:" + ds.Tables[0].Rows[i]["IsActive"];
+    string proddiscount = "Discount:" + ds.Tables[0].Rows[i]["Discount"];
+    int dp = Convert.ToInt32(ds.Tables[0].Rows[i]["Price"]) - ((Convert.ToInt32(ds.Tables[0].Rows[i]["Price"]) * Convert.ToInt32(ds.Tables[0].Rows[i]["Discount"])) / 100);
+
+                <div class="col-md-3">
+                    <img src="@imageUrl" width="165" height="160" />
+                </div>
+                <div class="col-md-3">
+                    <p style="color:black">@prodno</p>
+                    <p style="color:black">@prodnm</p>
+                    <p style="color:black">@prodbrand</p>
+                    <p style="color:black">@proddes</p>
+                    <p style="color:black">@prodprice</p>
+                    <p style="color:black">@prodavail</p>
+                    <p style="color:black">Discounted Price:@dp</p>
+                </div>
+            <div class="row-md-3">
+                <br />
+                <input type="submit" value="Next" name="Next" accesskey="n" class="btn btn-dark">
+            </div>
+            <div class="row-md-3">
+                <br />
+
+
+            </div>
+
+
+
+
+            <input type="button" hidden="hidden" value="speak" accesskey="s" class="btn btn-danger" onclick="speak('Product'+ '@prodnm,@prodbrand,@proddes,@prodprice'+'rupees.Price to pay:'+'@dp'+'rupees.Press N. for next product. Press B. for previous product.Enter quantity. Press A. to add the product to cart.')" />
+            }
+            <br />
+            <br />
+            <form action="ProdViewBack" method="post">
+                <input type="submit" value="Back" name="Back" accesskey="b" class=" btn btn-dark">
+
+            </form>
+<br/>
+<br/>
+<div>
+
+            <form action="AddtoCart" method="post">
+                @{
+                    Class1 c1 = new Class1();
+                    System.Data.DataSet dss = new System.Data.DataSet();
+
+
+                    //string a= Request.QueryString["cat"];
+
+                    if (Request.QueryString["cat"] == null)
+                    {
+                        dss = c1.selectDATA("select * from ProductMaster where CategoryId=" + Convert.ToInt32(Session["cat"]) + " ");
+                        //ds1 = c.selectDATA("select * from CategoryMaster where CategoryId=" + Convert.ToInt32(Session["cat"]) + " ");
+
+                    }
+                    else
+                    {
+                        dss = c1.selectDATA("select * from ProductMaster where CategoryId=" + Convert.ToInt32(Request.QueryString["cat"]) + " ");
+                        // ds1 = c.selectDATA("select * from CategoryMaster where CategoryId=" + Convert.ToInt32(Request.QueryString["cat"]) + " ");
+                        Session["cat"] = Request.QueryString["cat"];
+                    }
+
+
+
+
+                    int ii = Convert.ToInt32(Session["val"]);
+                    int dpp = Convert.ToInt32(dss.Tables[0].Rows[ii]["Price"]) - ((Convert.ToInt32(dss.Tables[0].Rows[ii]["Price"]) * Convert.ToInt32(dss.Tables[0].Rows[ii]["Discount"])) / 100);
+
+                    <input type="text" hidden="hidden" value=@dss.Tables[0].Rows[ii]["ProdNo"] name="pnp" id="pnp">
+                    @*<input type="text" hidden="hidden" value=@dss.Tables[0].Rows[ii]["Price"] name="ppri" id="ppri">*@
+                    <input type="text" hidden="hidden" value=@dpp name="ppri" id="ppri">
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                        <label for="quantity">Quantity</label>
+                                        <input type="text" name="quantity" class="form-control" width="2" autofocus><br/>
+                                        <input type="submit" value="Add To Cart" name="AddtoCart" accesskey="a" class=" btn btn-danger" onclick="speak('Product added to cart')">
+                                    </div>
+                                </div>
+                          
+                }
+
+            </form>
+    </div>

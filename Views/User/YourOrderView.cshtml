@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "YourOrderView";
+    Layout = "~/Views/Shared/User_LayoutPage.cshtml";
+}
+<script src="~/js/responsivevoice.js"></script>
+
+
+<script type="text/javascript">
+    responsiveVoice.speak("Your. Orders. Press alter key plus. s for details. a. for navigation guidelines.");
+</script>
+
+<script type="text/javascript">
+    
+    function speak(od, pno, pna, b, d, t, os)
+    {
+        responsiveVoice.speak('Order Date is. ' + od);
+        responsiveVoice.speak('Product Number is. ' + pno);
+        responsiveVoice.speak('Product Name is. ' + pna);
+        responsiveVoice.speak('Brand is. ' + b);
+        responsiveVoice.speak('Description is.  ' + d);
+        responsiveVoice.speak('Toatl amount for the quantity is ' + t);
+        responsiveVoice.speak('Order Status is. ' + os);
+        responsiveVoice.speak('Press alter key plus. N . for next and. B. for Back ');
+    }
+
+    function speakd()
+    {
+        responsiveVoice.speak('Press alter key plus. h. for home page. j. for your orders page. k. for your cart.');
+    }
+    
+</script>
+<a href="javascript:speakd()" accesskey="a" hidden="hidden">Speak</a>
+<a href="UserHome" accesskey="h" hidden="hidden">H</a>
+<a href="YourOrderView" accesskey="j" hidden="hidden">O</a>
+<a href="CartView" accesskey="k" hidden="hidden">k</a>
+
+@using (Html.BeginForm("YourOrderView", "User", FormMethod.Post))
+{
+
+    <h3 style="color:blue">Your Orders</h3>
+
+    Class1 c = new Class1();
+    System.Data.DataSet d = new System.Data.DataSet();
+    try
+    {
+
+
+    d = c.selectDATA("SELECT OrderMaster.OrderId, OrderDetails.Prod_No as P, OrderDetails.Price, OrderDetails.Quantity, OrderDetails.Total, OrderDetails.User_Email, OrderMaster.Order_Status, OrderMaster.Order_Date, ProductMaster.ProdNo, ProductMaster.ProdName, ProductMaster.Brand, ProductMaster.Description, ProductMaster.ProdImage FROM OrderDetails INNER JOIN OrderMaster ON OrderDetails.Order_Id = OrderMaster.OrderId AND OrderDetails.User_Email = OrderMaster.User_Email INNER JOIN ProductMaster ON OrderDetails.Prod_No = ProductMaster.ProdNo where OrderDetails.User_Email='" + Convert.ToString(Session["Email"]) + "' ");
+    int i = Convert.ToInt32(Session["val"]);
+    <div class="card-body">
+        <!-- PRODUCT -->
+        <div class="row">
+
+            <div class="col-12 col-sm-12 col-md-2 text-center">
+                <img class="img-responsive" src="data:image/png;base64,@Convert.ToBase64String((byte[])d.Tables[0].Rows[i]["ProdImage"])" alt="prewiew" width="120" height="80">
+            </div>
+            <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+                <h6 class="product-name"><strong>@d.Tables[0].Rows[i]["Order_Date"]</strong></h6>
+                <h4 class="product-name"><strong>@d.Tables[0].Rows[i]["P"]</strong></h4>
+                <h4 class="product-name"><strong>@d.Tables[0].Rows[i]["ProdName"]</strong></h4>
+                <h4 class="product-name"><strong>@d.Tables[0].Rows[i]["Brand"]</strong></h4>
+                <h4>
+                    <small>@d.Tables[0].Rows[i]["Description"]</small>
+                </h4>
+            </div>
+            <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+                <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+                    <h4><strong>@d.Tables[0].Rows[i]["Price"]<span class="text-muted">x</span>@d.Tables[0].Rows[i]["Quantity"]</strong></h4>
+                </div>
+                <div class="col-4 col-sm-4 col-md-4">
+                    <div class="quantity">
+
+                        <h4 class="product-name">@d.Tables[0].Rows[i]["Total"]</h4>
+                    </div>
+                </div>
+                <div class="col-2 col-sm-2 col-md-2 text-right">
+                    <h6><strong>@d.Tables[0].Rows[i]["Order_Status"]</strong></h6>
+                </div>
+                <a href="javascript:speak('@d.Tables[0].Rows[i]["Order_Date"]','@d.Tables[0].Rows[i]["ProdNo"]','@d.Tables[0].Rows[i]["ProdName"]','@d.Tables[0].Rows[i]["Brand"]','@d.Tables[0].Rows[i]["Description"]','@d.Tables[0].Rows[i]["Total"]','@d.Tables[0].Rows[i]["Order_Status"]')" accesskey="s" hidden="hidden"></a>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-2 text-center">
+                <input type="submit" value="Next" name="Next" accesskey="n" class=" btn btn-dark">
+            </div>
+            <div class="col-12 col-sm-12 col-md-2 text-center">
+                <form action="OrderBackView" method="post">
+                    <input type="submit" value="Back" name="Back" accesskey="b" class=" btn btn-danger">
+
+                </form>
+
+            </div>
+        </div>
+        </div>
+
+
+    }
+    catch
+    {
+        Session["val"] = 0;
+
+    }
+}
+    

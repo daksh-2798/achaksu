@@ -1,0 +1,58 @@
+﻿@model List<Projectnet.Models.OrderMaster>
+@{
+    ViewBag.Title = "PackagerView";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Packager</h2>
+
+<a href="PackedOrder">PACKED ORDERS</a>
+<h3 style="color:coral">Order Details to be Packed.</h3>
+<table class="table" width="85">
+    <thead class="thead-dark">
+        <tr>
+            <th width="20px">OrderId</th>
+            <th width="20px">Customer Name</th>
+            <th width="20px">Delivery Address</th>
+            <th width="20px">City</th>
+            <th width="20px">State</th>
+            <th width="20px">Pincode</th>
+            <th width="20px">Contact</th>
+            <th width="20px">Email</th>
+            <th width="20px">User Email</th>
+            <th width="20px">Date Of Order</th>
+            <th width="20px">Pay Method</th>
+            <th width="20px">Order Status</th>
+            <th width="20px">Details</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var s in Model)
+    {
+       
+            <tr>
+                <td>@s.OrderId</td>
+                <td>@s.Customer_Name</td>
+                <td>@s.Delivery_Address</td>
+                <td>@s.City</td>
+                <td>@s.State</td>
+                <td>@s.Pincode</td>
+                <td>@s.Contact_No</td>
+                <td>@s.Customer_Email</td>
+                <td>@s.User_Email</td>
+                <td>@s.Order_Date</td>
+                <td>@s.Pay_Method</td>
+                <td>@s.Order_Status</td>
+                
+                <td>@Html.ActionLink("PackageDetails", "PackageDetails",new { k = @s.OrderId })</td>
+                @*<td>@Html.ActionLink("PackageConfirm", "PackageConfirm", new { k = @s.OrderId})</td>*@
+
+            </tr>
+        
+    }
+     </tbody>
+    </table>
+
+

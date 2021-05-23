@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "DeliveryCoView";
+    Layout = "~/Views/Shared/_DeliveryLayoutPage1.cshtml";
+}
+
+@{
+
+    Class1 c = new Class1();
+    System.Data.DataSet d = new System.Data.DataSet();
+
+    d = c.selectDATA(@" SELECT        DeliveryCoMaster.EmailId, OrderMaster.OrderId, ShipMAster.Order_Id, ShipMAster.ProdNo, OrderMaster.Customer_Name, OrderMaster.Delivery_Address, OrderMaster.City, OrderMaster.State, OrderMaster.Pincode, 
+                         OrderMaster.Contact_No, OrderMaster.Customer_Email, OrderMaster.User_Email
+FROM            ShipMAster INNER JOIN
+                         OrderMaster ON ShipMAster.Order_Id = OrderMaster.OrderId  INNER JOIN
+                         DeliveryCoMaster ON ShipMAster.Del_Company = DeliveryCoMaster.CompName where DeliveryCoMaster.EmailId='" + Convert.ToString(Session["EmailId"])+"'  ORDER BY ShipMAster.Order_Id ");
+    <h4>Welcome </h4><h4 style="color:darkblue">@Convert.ToString(Session["EmailId"])</h4>
+    <h3 style="color:coral">Shipment</h3>
+
+    <table class="table" width="85">
+        <thead class="thead-dark">
+            <tr>
+                <th width="50px">OrderID</th>
+                <th width="50px">Customer Name</th>
+                <th width="50px">Product No.</th>
+                <th width="50px">Adress</th>
+                <th width="50px">City</th>
+                <th width="50px">State</th>
+                <th width="50px">Pincode</th>
+                <th width="50px">User Email</th>
+                <th width="50px">Contact</th>
+                <th width="50px">Customer Email</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < d.Tables[0].Rows.Count; i++)
+            {
+                <tr>
+                    <td>@d.Tables[0].Rows[i]["Order_Id"]</td>
+                    <td>@d.Tables[0].Rows[i]["Customer_Name"]</td>
+                    <td>@d.Tables[0].Rows[i]["ProdNo"]</td>
+                    <td>@d.Tables[0].Rows[i]["Delivery_Address"]</td>
+                    <td>@d.Tables[0].Rows[i]["City"]</td>
+                    <td>@d.Tables[0].Rows[i]["State"]</td>
+                    <td>@d.Tables[0].Rows[i]["Pincode"]</td>
+                    <td>@d.Tables[0].Rows[i]["User_Email"]</td>
+                    <td>@d.Tables[0].Rows[i]["Contact_No"]</td>
+                    <td>@d.Tables[0].Rows[i]["Customer_Email"]</td>
+
+    
+                </tr>
+            }
+
+
+
+        </tbody>
+    </table>
+    <br /><br />
+    <table>
+        @*<tr>
+                <th width="200px">Action</th>
+                <th width="200px">@Html.ActionLink("OrderPackedDel", "OrderPackedDel", new { k = @d.Tables[0].Rows[0]["Order_Id"] })</th>
+            </tr>*@
+    </table>
+    }
+

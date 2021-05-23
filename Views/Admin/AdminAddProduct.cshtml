@@ -1,0 +1,85 @@
+﻿@model Projectnet.Models.CategoryMaster
+@{
+    ViewBag.Title = "AdminAddProduct";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+
+<link href="~/bossCss/bootstrap.min.css" rel="stylesheet" />
+@using (Html.BeginForm("AdminAddProductPost", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="container" style="margin-top:30px">
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title"><strong>ADD PRODUCT </strong></h3></div>
+            <div class="panel-body">
+                <form role="form">
+                    
+                    <div class="form-group">
+                        <label for="exampleInputProductNumber">Product Number</label>
+                        <input type="text" class="form-control" id="exampleInputProductNumber" name="pno" placeholder="Enter ProductNumber">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputProductName">Product Name</label>
+                        <input type="text" class="form-control" id="exampleInputProductName" name="pname" placeholder="Enter ProductName">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputBrand">Brand</label>
+                        <input type="text" class="form-control" id="exampleInputBrand" name="brand" placeholder="Enter Brand">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputProductDescription">Product Description</label>
+                        <input type="text" class="form-control" id="exampleInputProductDescription" name="pdescrp" placeholder="Enter ProductDescription">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPrice">Price</label>
+                        <input type="text" class="form-control" id="exampleInputPrice" name="price" placeholder="Enter Price">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputCategoryId">Category Id</label>
+                           
+                        @{
+
+                            Class1 c = new Class1();
+                            System.Data.DataSet ds = new System.Data.DataSet();
+                            ds = c.selectDATA("select * from CategoryMaster");
+                            <select class="form-control" style="width:200px;height:34px"  name="cid">
+                                @for(int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                                {
+
+                                <option value=@ds.Tables[0].Rows[i][1]>@ds.Tables[0].Rows[i][2]</option>
+
+
+                                }
+                            </select>
+                        }
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="exampleInputImage">Product Image</label>
+                        <input type="file" id="exampleInputImage" name="postedfile"/>
+                    </div>                    
+             
+                    <div class="form-group">
+                        <label for="exampleInputDiscount">Discount Status</label>
+                        <input type="radio" id="discountstatus" name="ds" value="1"> YES &nbsp;
+                        <input type="radio" id="discountstatus" name="ds" value="0"> NO &nbsp;
+                       </div>
+                    <div class="form-group">
+                        <label for="exampleInputDiscount">Discount</label>
+                        <input type="text" class="form-control" id="exampleInputDiscount" name="discount" placeholder="Enter Discount Percentage">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputActive">Active</label>
+                        <input type="radio" id="active" name="active" value="1"> YES &nbsp;
+                        <input type="radio" id="active" name="active" value="0"> NO &nbsp;
+                    </div>
+                    <button type="submit" class="btn btn-danger">Add Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+                            }

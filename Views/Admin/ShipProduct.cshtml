@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "ShipProduct";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+<link href="~/bossCss/bootstrap.min.css" rel="stylesheet" />
+@{
+    Class1 c = new Class1();
+    System.Data.DataSet ds = new System.Data.DataSet();
+    ds = c.selectDATA("select * from DeliveryCoMaster");
+
+    using (Html.BeginForm("ShipProduct", "Admin", FormMethod.Post))
+    {
+        string oid = Request.QueryString["k"];
+        string pn = Request.QueryString["p"];
+                <div class="container" style="margin-top:30px">
+                    <div class="col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><h3 class="panel-title"><strong>Select Delivery Company</strong></h3></div>
+                            <div class="panel-body">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <label for="exampleInputName">Company Name</label>
+                                       
+                                        <select class="form-control"  style="width:200px;height:34px" id="cname" name="cname">
+                                            @for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                                            {
+                                             <option value=@ds.Tables[0].Rows[i]["CompName"]>@ds.Tables[0].Rows[i]["CompName"]</option>
+                                            }  
+                                              
+                                        </select>
+                                        </div>
+                                       
+                                        <input type="hidden" id="id" name="k" value="@oid">
+                                    <input type="hidden" id="pn" name="p" value="@pn">
+                                                                                
+
+                                   
+                                    <button type="submit" class="btn btn-sm btn-default">Send for Shipping</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+        }}
+
+
+

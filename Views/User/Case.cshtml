@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Case";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Speech</h2>
+
+<script>
+
+    var voices = []
+    var kline = new Object();
+
+    window.speechSynthesis.onvoiceschanged = function () {
+        voices = window.speechSynthesis.getVoices();
+        console.log(voices);
+
+        kline.speakAloud = function (message) {
+            Speech = new SpeechSynthesisUtterance(message);
+            Speech.voice = voices[1];
+            Speech.voiceURI = "Google UK English Male";
+            Speech.volume = 1; // 0 to 1
+            Speech.rate = 1; // 0.1 to 10
+            Speech.pitch = 0; //0 to 2
+            Speech.lang = 'en-GB';
+            window.speechSynthesis.speak(Speech);
+        };
+        delete kline;     
+
+    };
+</script>
+    <script>
+        function Speak(a)
+        {
+            kline.speakAloud(a.value);
+      
+       
+        }
+    </script>
+<input type="text" id="Input"  onfocus="Speak(this);" value="Hellooo" />
+
+
+

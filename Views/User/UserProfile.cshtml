@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "UserProfile";
+    Layout = "~/Views/Shared/User_LayoutPage.cshtml";
+}
+@{
+    Class1 c = new Class1();
+    System.Data.DataSet ds = new System.Data.DataSet();
+    ds = c.selectDATA("select * from UserMaster");
+    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+    {
+        if (Convert.ToString(Session["Email"]).Equals(ds.Tables[0].Rows[i]["Email"]))
+        {
+
+
+            using (Html.BeginForm("UserProfilePost", "User", FormMethod.Post))
+            {
+    <div class="container" style="margin-top:30px">
+        <div class="col-md-10">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3 class="panel-title"><strong>Your Profile </strong></h3></div>
+                <div class="panel-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="exampleInputFN">First Name</label>
+                            <input type="text" class="form-control" id="fname" name="fname"  value="@ds.Tables[0].Rows[i]["FName"]" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" name="lname" id="lname" value="@ds.Tables[0].Rows[i]["LName"]" readonly>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputGender">Gender</label>
+                            <input type="text"  class="form-control" name="gender" id="gender"  readonly  value="@ds.Tables[0].Rows[i]["Gender"]" >
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputDob">Date Of Birth</label> <br />
+                            <label for="exampleInputDate">Date</label>
+                            <input type="text" class="form-control" id="date" name="date" readonly  value="@ds.Tables[0].Rows[i]["Date"]">
+                            <label for="exampleInputMonth">Month</label>
+                            <input type="text" class="form-control" id="month" name="month" readonly  value="@ds.Tables[0].Rows[i]["Month"]">
+                            <label for="exampleInputMonth">Year</label>
+                            <input type="text" class="form-control" id="year" name="year" readonly value="@ds.Tables[0].Rows[i]["Year"]">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputBlindper">Blindness Percentage</label>
+                            <input type="text" class="form-control" id="bp" name="bp" readonly value="@ds.Tables[0].Rows[i]["Blindprec"]">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputUDID">UDID Number</label>
+                            <input type="text" class="form-control" id="UDID" name="udid" readonly value="@ds.Tables[0].Rows[i]["UDID"]">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputCertficate">Certificate Number</label>
+                            <input type="text" class="form-control" id="certificate" name="certificate" readonly value="@ds.Tables[0].Rows[i]["CertificateNo"]">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputAdress">Address</label>
+                            <input type="text" class="form-control" id="address" name="address" autofocus onkeypress="speakWord(event);" value="@ds.Tables[0].Rows[i]["Address"]">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputCity">City</label>
+                            <input type="text" class="form-control" id="city" name="city"  onkeypress="speakWord(event);" value="@ds.Tables[0].Rows[i]["City"]">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputState">State</label>
+                            <input type="text" class="form-control" id="state" name="state" placeholder="Enter State" onkeypress="speakWord(event);" value="@ds.Tables[0].Rows[i]["State"]">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputCountry">Country</label>
+                            <input type="text" class="form-control" id="country" name="country" readonly onfocus="speak('India')" value="@ds.Tables[0].Rows[i]["Country"]";>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputMob">Mobile Number</label>
+                            <input type="text" class="form-control" id="mob" name="mob"  onkeypress="speakWord(event);" value="@ds.Tables[0].Rows[i]["Mobile"]">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail">Email id</label>
+                            <input type="email" class="form-control" id="email" name="email" readonly  onkeypress="speakWord(event);" value="@ds.Tables[0].Rows[i]["Email"]">
+                        </div>
+
+                         <input type="submit" class="btn btn-dark" value="Edit" name="Edit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+                }
+            }
+        }
+    }

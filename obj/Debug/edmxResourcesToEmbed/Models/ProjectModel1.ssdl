@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" />
+    <Property Name="DateOB" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CategoryMaster">
+    <Key>
+      <PropertyRef Name="No" />
+    </Key>
+    <Property Name="No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cat_Id" Type="varchar" MaxLength="50" />
+    <Property Name="Cat_Type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProductMaster">
+    <Key>
+      <PropertyRef Name="ProdId" />
+    </Key>
+    <Property Name="ProdId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProdNo" Type="varchar" MaxLength="50" />
+    <Property Name="ProdName" Type="varchar" MaxLength="50" />
+    <Property Name="Brand" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="Price" Type="int" />
+    <Property Name="Discount" Type="int" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="ProdImage" Type="varbinary(max)" />
+    <Property Name="ProdImgContent" Type="varchar" MaxLength="50" />
+    <Property Name="IsDiscount" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FName" Type="varchar" MaxLength="50" />
+    <Property Name="LName" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" />
+    <Property Name="Date" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Month" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Year" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Blindprec" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="UDID" Type="varchar" MaxLength="50" />
+    <Property Name="CertificateNo" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="ProjectModelStoreContainer">
+    <EntitySet Name="AdminMaster" EntityType="Self.AdminMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CategoryMaster" EntityType="Self.CategoryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductMaster" EntityType="Self.ProductMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserMaster" EntityType="Self.UserMaster" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

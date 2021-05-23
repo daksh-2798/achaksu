@@ -1,0 +1,91 @@
+﻿<link href="~/styles/bootstrap.min.css" rel="stylesheet" />
+<link href="~/styles/font-awesome.min.css" rel="stylesheet" />
+<link href="~/styles/owl.carousel.css" rel="stylesheet" />
+<link href="~/styles/owl.theme.default.css" rel="stylesheet" />
+<link href="~/styles/style.css" rel="stylesheet" />
+<link href="~/styles/magnific-popup.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "AdminHome";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+@if (ViewData["Name"] != null)
+{
+    <label style="color:blue">
+        "Hello," @ViewData["Name"]
+    </label>
+}   
+   
+        <!-- Container -->
+        <div class="container">
+            <h3 style="color:black">Menu</h3>
+            <!-- Row -->
+            <div class="row">
+
+
+                <div class="col-sm-4">
+                    <a href="StockInView">
+                        <div class="team">
+                            <div class="team-img">
+                                <img class="img-responsive" src="" alt="">
+                            </div>
+                            <div class="team-content">
+                                <h3>Add</h3>
+                                <span><h3>Stock</h3></span>
+                            </div>
+                        </div></a>
+</div>
+                <!-- /team -->
+                <!-- team -->
+                <div class="col-sm-4">
+                    <a href="DeliveryCoRegister">
+                        <div class="team">
+                            <div class="team-img">
+                                <img class="img-responsive" src="./img/team2.jpg" alt="">
+
+                            </div>
+                            <div class="team-content">
+                                <h3>Register</h3>
+                                <span><h3>Delivery Company</h3></span>
+                            </div></a>
+                        </div>
+</div>
+                <!-- /team -->
+                <!-- team -->
+                
+                    <div class="col-sm-4">
+                        <a href="PackagerRegister">
+                            <div class="team">
+                                <div class="team-img">
+                                    <img class="img-responsive" src="" alt="">
+
+
+                                </div>
+                                <div class="team-content">
+                                    <h3>Register</h3>
+                                    <span><h3>Packager</h3></span>
+                                </div>
+                            </div>
+                        </a>
+                </div>
+                <!-- /team -->
+
+            </div>
+            <!-- /Row -->
+
+       @*</div>*@
+<div class="col-sm-4">
+    <a href="AddDiscountCatView">
+        <div class="team">
+            <div class="team-img">
+                <img class="img-responsive" src="" alt="">
+
+
+            </div>
+            <div class="team-content">
+                <h3>Add</h3>
+                <span><h3>Discount</h3></span>
+            </div>
+        </div>
+    </a>
+</div>
